@@ -28,7 +28,8 @@ pub fn part_two(input: &str) -> Option<u32> {
                 }
             } else {
                 match &cap[0] {
-                    "don't()" | "do()" => enabled = !enabled,
+                    "don't()" => enabled = false,
+                    "do()" => enabled = true,
                     _ => {}
                 }
                 None
