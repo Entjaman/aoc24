@@ -109,11 +109,7 @@ fn count_crosses(i: usize, j: usize, grid: &Grid) -> u32 {
         if temp == "M" || temp == "S" {
             temp.push(grid[i+1][j+1]);
             match temp.as_str() {
-                "SM" | "MS" => {
-                    if found_one_diagonal {
-                        count += 1
-                    }
-                },
+                "SM" | "MS" if found_one_diagonal => count += 1,
                 _ => {}
             }
         }
